@@ -2,7 +2,10 @@ extends layout
 
 block content
   main
-    h1= title
-    p= story[0].body
+    .card(style='width: 60rem;')
+      .card-body
+        h5.card-title Grisen som ville få det bättre.
+        p.card-text= story[0].bod
     each link in links
-      p= link.description
+      a(href=link.target_id)
+        button.btn.btn-outline-danger(type='button')= link.description
