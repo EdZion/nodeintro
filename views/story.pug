@@ -1,11 +1,11 @@
 extends layout
 
 block content
-  main
-    .card(style='width: 60rem;')
+  main.container.w-50
+    .card.mt-2.w-100.bg-dark.text-white
+      img.card-img-top(src='/images/pig.jpg' alt='Gris')
       .card-body
-        h5.card-title Grisen som ville få det bättre.
-        p.card-text= story[0].bod
-    each link in links
-      a(href=link.target_id)
-        button.btn.btn-outline-danger(type='button')= link.description
+        p.card-text= story[0].body
+      .card-footer.d-flex.justify-content-between
+        each link in links
+          a.btn.btn-outline-danger(href=link.target_id)= link.description
